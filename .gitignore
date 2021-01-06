@@ -4,3 +4,4 @@ env/
 
 #Ignore file .env
 **/.env
+/purbeurre_project/static/main/node_modules
