@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Accueil PurBeurre{% endblock title %}
+
+{% block content %}
+            <!-- About-->
+            <section class="page-section bg-primary" id="about">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="text-white mt-0">Colette & Rémy</h2>
+                            <hr class="divider light my-4" />
+                            <div class="text-white-70">
+                                <h4 class="text-left">De la ratatouille aux croissants...</h4>
+                                <h4 class="text-right">Une plateforme web pour les gourmets</h4>
+                            </div>
+                            <p class="text-justify"> Nous sommes une jeune startup fondée par Remy et Colette Tatou, deux restaurateurs de renom. Notre restaurant, situé à Montmartre (Paris), compte une cinquantaine de couverts et ne désemplit pas. Notre spécialité, la ratatouille, nous attire une clientèle internationale charmée par les délices de ce plat typique.</p>
+                            <dl>
+                                <dt class="text-right">- Colette Tatou</dt>
+                                    <dd class="font-italic text-justify">"Nous aimons tous manger, surtout en France ! Personnellement, une baguette fraîche, du bon fromage de chèvre et un bon vin rouge me suffisent amplement. Comme tout le monde, je fais mes courses au supermarché. Mais petit à petit je me suis rendue compte, surtout lorsque nous avons ouvert le restaurant, que je pouvais remplacer les produits aseptisés que j'avais l'habitude d'acheter par de bons produits du terroir Et souvent pour le même prix !"
+                                    </dd>
+                                <dt class="text-right">- Rémy</dt>
+                                    <dd class="font-italic text-justify">
+                                        "Pour ma part je me rendais déjà dans bien des magasins car j'aime beaucoup me balader, surtout dans les caves et les cuisines. Je connaissais par coeur le contenu des boutiques bio (dont je raffole) ainsi que les ingrédients de tous les aliments vendus. Lorsque Colette m'a demandé si elle pouvait remplacer son Nutella matinal par un aliment plus sain, je savais tout de suite où le trouver. L'idée de Pur Beurre était née !"
+                                    </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Picture-->
+            <section class="page-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-sm-12 col-lg-6  m-auto">
+                            <img class="img-fluid" src="{% static 'main/dist/assets/img/colette-portrait.png' %}" atl="Portrait Colette"/>
+                            <p>Colette</p>
+
+                        </div>
+                        <div class="col-sm-12 col-lg-6 m-auto">
+                            <img class="img-fluid " src="{% static 'main/dist/assets/img/ratatouille-portrait.png' %}" atl="Portrait Ratatouille" />
+                            <p>Rémy</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio-->
+            <section class="page-section bg-secondary">
+                <div id="portfolio">
+                    <div class="container-fluid p-0">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="portfolio-box" href="{% static 'main/dist/assets/img/portfolio/fullsize/1.png' %}">
+                                    <img class="img-fluid" src="{% static 'main/dist/assets/img/portfolio/thumbnails/1.png' %}" alt="" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Category</div>
+                                        <div class="project-name">Project Name</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="portfolio-box" href="{% static 'main/dist/assets/img/portfolio/fullsize/2.png' %}">
+                                    <img class="img-fluid" src="{% static 'main/dist/assets/img/portfolio/thumbnails/2.png' %}" alt="" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Category</div>
+                                        <div class="project-name">Project Name</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="portfolio-box" href="{% static 'main/dist/assets/img/portfolio/fullsize/3.png' %}">
+                                    <img class="img-fluid" src="{% static 'main/dist/assets/img/portfolio/thumbnails/3.png' %}" alt="" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Category</div>
+                                        <div class="project-name">Project Name</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="portfolio-box" href="{% static 'main/dist/assets/img/portfolio/fullsize/4.png' %}">
+                                    <img class="img-fluid" src="{% static 'main/dist/assets/img/portfolio/thumbnails/4.png' %}" alt="" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Category</div>
+                                        <div class="project-name">Project Name</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="portfolio-box" href="{% static 'main/dist/assets/img/portfolio/fullsize/5.jpg' %}">
+                                    <img class="img-fluid" src="{% static 'main/dist/assets/img/portfolio/thumbnails/5.png' %}" alt="" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Category</div>
+                                        <div class="project-name">Project Name</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="portfolio-box" href="{% static 'main/dist/assets/img/portfolio/fullsize/6.png' %}">
+                                    <img class="img-fluid" src="{% static 'main/dist/assets/img/portfolio/thumbnails/6.png' %}" alt="" />
+                                    <div class="portfolio-box-caption p-3">
+                                        <div class="project-category text-white-50">Category</div>
+                                        <div class="project-name">Project Name</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact-->
+            <section class="page-section" id="contact">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="mt-0">Contactez-nous !</h2>
+                            <hr class="divider my-4" />
+                            <p class="text-muted mb-5">Bien manger c'est possible ! Il n'est jamais trop tard pour changer ses habitudes...</br>paroles de Rat-atouille !</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                            <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                            <div>+33 1 42 42 90 90</div>
+                        </div>
+                        <div class="col-lg-4 mr-auto text-center">
+                            <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                            <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                            <a class="d-block" href="mailto:ratatouille@ypurbeurre.com">ratatouille@purbeurre.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock content %}
