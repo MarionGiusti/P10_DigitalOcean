@@ -1,7 +1,4 @@
-# Ignore virtual env
 env/
-**/__pycache__
-
-#Ignore file .env
-**/.env
-/purbeurre_project/static/main/node_modules
+__pycache__/
+.env
+node_modules/

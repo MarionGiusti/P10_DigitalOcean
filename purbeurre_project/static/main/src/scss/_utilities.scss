@@ -1,0 +1,13 @@
+// Custom utilities for this theme
+
+.text-white-75 {
+    color: fade-out($white, 0.25);
+}
+
+.text-white-70 {
+    color: rgba($white, .8); 
+}
+
+.text-rooibos {
+    color: $rooibos; 
+}
