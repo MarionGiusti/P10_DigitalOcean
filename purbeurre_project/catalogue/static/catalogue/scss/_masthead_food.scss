@@ -1,0 +1,89 @@
+// Styling for the masthead
+
+header.masthead_food {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - #{$navbar-height});
+    // replace the masthead.jpg image in the /assets/img directory to change the image
+    // if the image name change, make sure to update the url path below!
+    background-color: $secondary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+
+    h1 {
+        font-size: 2.25rem;
+    }
+}
+
+
+//-Box transparent white
+.box_contrast{
+    width: fit-content;
+    margin: auto;
+    padding: 15px;
+    color: $white;
+    background-color: rgba($rooibos, 0.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+
+}
+
+.box_wrap {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: dashed red;
+}
+
+.bb {
+  border: solid $rooibos;
+}
+
+.box-product {
+  width: 100%;
+  height : 500px; 
+  background-color: rgba($secondary, 0.9);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+}
+
+.box-img{
+  border: solid red;
+  position: relative;
+}
+
+.img-nutri {
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(20%, -50%)
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.btn-details {
+    background-color: $bonbon;
+}
+
+
+.overlay {
+  opacity: 0;
+}
+
+.box-img:hover img {
+  opacity: 0.5;
+}
+
+.box-img:hover .overlay{
+  opacity: 1;
+}
+
+.title-substitute {
+    color: $white;
+}

@@ -9,7 +9,8 @@
 @import "./navbar.scss";
 @import "./masthead.scss";
 @import "./portfolio.scss";
-@import "./masthead_auth.scss";
+@import "../../../../user/static/user/scss/masthead_auth.scss";
+@import "../../../../catalogue/static/catalogue/scss/masthead_food.scss";
 
 // Import custom utilities
 @import "./utilities.scss";

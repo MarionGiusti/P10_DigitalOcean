@@ -70,7 +70,12 @@ class Command(BaseCommand):
             results_json = req.json()
             products_json = results_json["products"]
 
+            # with open('json_cat_prod.json','w') as f:
+            #     f.write(json.dumps(products_json, indent=4))
+
             return products_json
+
+
     
     def insert_product(self, products, category):
         products_resu = []
@@ -94,7 +99,11 @@ class Command(BaseCommand):
                                 'pnns_gps1' : product_resu.get("pnns_groups_1"),
                                 'pnns_gps2' : product_resu.get("pnns_groups_2"),
                                 'store_name' : product_resu.get("stores"),
-                                'picture' : product_resu.get("image_url")
+                                'picture' : product_resu.get("image_url"),
+                                'fat_100g' : product_resu["nutriments"].get("fat_100g"),
+                                'saturated_fat_100g' : product_resu["nutriments"].get("saturated-fat_100g"),
+                                'salt_100g' : product_resu["nutriments"].get("salt_100g"),
+                                'sugars_100g' : product_resu["nutriments"].get("sugars_100g")
                             },
                         )
 

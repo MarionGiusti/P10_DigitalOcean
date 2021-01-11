@@ -10173,6 +10173,89 @@ header.masthead_auth h1 {
   font-size: 2.25rem;
 }
 
+header.masthead_food {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background-color: #345a61;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+header.masthead_food h1 {
+  font-size: 2.25rem;
+}
+
+.box_contrast {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 15px;
+  color: #fff;
+  background-color: rgba(196, 85, 37, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.box_wrap {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: dashed red;
+}
+
+.bb {
+  border: solid #c45525;
+}
+
+.box-product {
+  width: 100%;
+  height: 500px;
+  background-color: rgba(52, 90, 97, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.box-img {
+  border: solid red;
+  position: relative;
+}
+
+.img-nutri {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(20%, -50%);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-details {
+  background-color: #86ebe6;
+}
+
+.overlay {
+  opacity: 0;
+}
+
+.box-img:hover img {
+  opacity: 0.5;
+}
+
+.box-img:hover .overlay {
+  opacity: 1;
+}
+
+.title-substitute {
+  color: #fff;
+}
+
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75);
 }

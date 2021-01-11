@@ -24,6 +24,10 @@ class Product(models.Model):
 	pnns_gps2 = models.CharField(max_length=200)
 	store_name = models.CharField(max_length=200)
 	picture = models.URLField()
+	fat_100g = models.FloatField()
+	saturated_fat_100g = models.FloatField()
+	salt_100g = models.FloatField()
+	sugars_100g = models.FloatField()
 
 	def __str__(self):
 		return self.product_name

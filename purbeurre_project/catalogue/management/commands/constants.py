@@ -17,6 +17,7 @@ CHOSEN_FIELDS = [
     "pnns_groups_2",
     "stores",
     "image_url",
+    "nutriments",
     "categories"
     ]
 

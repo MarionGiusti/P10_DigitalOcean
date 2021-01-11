@@ -17,7 +17,8 @@
         <!-- Third party plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'dist/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'main/dist/css/styles.css' %}" rel="stylesheet" />
+        <!-- <link href={}/> -->
     </head>
     <body id="page-top">
         {% block nav %}
@@ -27,13 +28,16 @@
                     <a class="navbar-brand js-scroll-trigger" href="{% url 'index' %}"><img src="{% static 'main/dist/assets/img/logo_purbeurre.png' %}" atl="logo Pur Beurre">  Pur Beurre</a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     
-                    <form class="form-inline" action="" method="get" accept-charset="utf-8">
-                        <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search">
-                        <input type="submit" class="invisible"/>                      
-                    </form>
+                    
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                            <li class="nav-item d-flex align-items-center">
+                                <form class="form-inline" action="{% url 'catalogue:results_substitute' %}" method="get" accept-charset="utf-8">
+                                    <input class="form-control" name="query" type="search" placeholder="Chercher" aria-label="Search">
+                                    <input type="submit" class="invisible"/>
+                                </form>
+                            </li>
                             
                             {% if not user.is_authenticated %}
                             <li class="nav-item d-flex align-items-center"><i class='fas fa-sign-in-alt ml-2' id="icon_nav"></i><a class="nav-link js-scroll-trigger" href="{% url 'user:login' %}"> Se connecter</a></li>
@@ -66,11 +70,14 @@
                         <div class="col-lg-8 align-self-baseline">
                             <h2 class="text-white-75 font-weight-light mb-5">Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
 
-                            <form class="form-inline justify-content-center  " action="" method="get" accept-charset="utf-8">
-                                <div class="form-group">
-                                  <label for="searchForm"></label>
-                                  <input id="searchForm" class="form-control" name="query" placeholder="Produit" autocomplete="off">
-                                  <button type="submit" class="btn btn-primary" >Chercher</button>
+                            <form class="form-inline justify-content-center  " action="{% url 'catalogue:results_substitute' %}" method="get" accept-charset="utf-8">
+                                <!-- <div class="form-group"> -->
+                                <div class="input-group">
+                                    <label for="searchForm"></label>
+                                    <input id="searchForm" class="form-control" name="query" placeholder="Produit" autocomplete="off">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary" >Chercher</button>
+                                    </div>
                                 </div>
                             </form>
 
