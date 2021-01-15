@@ -1,15 +1,11 @@
 from django.urls import path
 
 from . import views
-from .views import SearchSubstituteListView
-# from .views import SearchProductListView
+from .views import SearchSubstituteListView, SubstituteDetailView, FavoritesListView
 
 urlpatterns = [
-	# path('search/', views.search, name="search_product"),
-	# path('search/', SearchProductListView.as_view(), name='search_product'),
 	path('result/', SearchSubstituteListView.as_view(), name='results_substitute'),
-	# path('detail/', SubstituteDetailView.as_view(), name='detail_substitute')
-
-
-
+	path('detail/<int:pk>', SubstituteDetailView.as_view(), name='details_substitute'),
+	path('save/', views.save_substitute, name='save_substitute'),
+	path('favorites', FavoritesListView.as_view(), name='favorites_substitute')
 ]

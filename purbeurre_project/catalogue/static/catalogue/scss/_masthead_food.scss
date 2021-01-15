@@ -17,8 +17,20 @@ header.masthead_food {
     }
 }
 
+header.masthead_substitute {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - #{$navbar-height});
+    // replace the masthead.jpg image in the /assets/img directory to change the image
+    // if the image name change, make sure to update the url path below!
+    background-position: center;
+    background-attachment: scroll;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    h1 {
+      font-size: 2.25rem;
+      }
+}
 
-//-Box transparent white
+//-Box 
 .box_contrast{
     width: fit-content;
     margin: auto;
@@ -26,29 +38,22 @@ header.masthead_food {
     color: $white;
     background-color: rgba($rooibos, 0.8);
     box-shadow: 0 5px 15px rgba(0,0,0,0.7);
-
 }
 
 .box_wrap {
-  width: 80%;
+  width: 85%;
   padding: 10px;
   margin: 10px auto;
-  border: dashed red;
-}
-
-.bb {
-  border: solid $rooibos;
 }
 
 .box-product {
   width: 100%;
   height : 500px; 
-  background-color: rgba($secondary, 0.9);
+  background-color: rgba($bonbon, 0.7);
   box-shadow: 0 5px 15px rgba(0,0,0,0.7);
 }
 
 .box-img{
-  border: solid red;
   position: relative;
 }
 
@@ -84,6 +89,14 @@ header.masthead_food {
   opacity: 1;
 }
 
-.title-substitute {
-    color: $white;
+// Details substitute
+.icon-back {
+  color: $rooibos;
+}
+
+.detail_card {
+  margin-bottom: auto;
+  margin-top:auto;
+  background: rgba($bonbon, .8);
+  box-shadow: 0px 6px 4px #1c1a19;
 }

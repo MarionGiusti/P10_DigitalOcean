@@ -36,10 +36,9 @@ class Product(models.Model):
 		verbose_name = "Produit"
 
 class FavoriteProduct(models.Model):
-	product_id = models.ForeignKey(Product, related_name='chosen_product', on_delete=models.PROTECT)
-	substitute_id = models.ForeignKey(Product, related_name='healthy_substitute', on_delete=models.PROTECT)
-	custumer_id = models.ForeignKey(User, on_delete=models.CASCADE)
-
+	product = models.ForeignKey(Product, related_name='chosen_product', on_delete=models.PROTECT)
+	substitute = models.ForeignKey(Product, related_name='healthy_substitute', on_delete=models.PROTECT)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	class Meta:
 		verbose_name = "Favoris"
