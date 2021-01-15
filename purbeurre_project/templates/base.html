@@ -44,7 +44,7 @@
                             
                             {% else %}
                             <li class="nav-item d-flex align-items-center "><i class='fas fa-user ml-2' id="icon_nav"></i><a class="nav-link js-scroll-trigger" href="{% url 'user:account' %}"> Mon compte</a></li>
-                            <li class="nav-item d-flex align-items-center"><a class="nav-link js-scroll-trigger" href=""><img src="{% static 'main/dist/assets/img/carrot-icon.png' %}" alt='icône Carotte' class="ml-2 mr-2"></img> Mes produits</a></li>
+                            <li class="nav-item d-flex align-items-center"><a class="nav-link js-scroll-trigger" href="{% url 'catalogue:favorites_substitute' %}"><img src="{% static 'main/dist/assets/img/carrot-icon.png' %}" alt='icône Carotte' class="ml-2 mr-2"></img> Mes produits</a></li>
                             <li class="nav-item d-flex align-items-center"><i class='fas fa-sign-out-alt ml-2' id="icon_nav"></i><a class="nav-link js-scroll-trigger" href="{% url 'user:logout' %}"> Se déconnecter</a></li>
 
                             {% endif %}
@@ -87,6 +87,21 @@
                 </div>
             </header>
         {% endblock header %}
+
+        <!-- Messages-->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
 
         {% block content %}
         {% endblock content %}
