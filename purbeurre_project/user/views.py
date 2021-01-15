@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-# from django.http import HttpResponse
-# from django.template import loader
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 
@@ -10,12 +8,10 @@ from django.contrib import messages
 from .forms import CreateUserForm
 
 def index(request):
-    # template = loader.get_template('catalogue/home.html')
     context = {}
-    # return HttpResponse(template.render(request=request))
     return render(request, 'user/home.html', context)
 
-def registerPage(request):
+def register_page(request):
     form = CreateUserForm()
 
     if request.method == 'POST':
@@ -30,7 +26,7 @@ def registerPage(request):
     context = {'form':form}
     return render(request, 'user/register.html', context)
 
-def loginPage(request):
+def login_page(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -42,13 +38,11 @@ def loginPage(request):
             return redirect('index')
         else:
             messages.info(request, "Nom d'utilisateur OU Mot de passe incorrect")
-    # if request.user.is_authenticated:
-    #     return
 
     context = {}
     return render(request, 'user/login.html', context)
 
-def logoutUser(request):
+def logout_user(request):
     logout(request)
     return redirect('index')
 
