@@ -18,66 +18,67 @@ category fields. The available informations of each product like its nutrition-g
 
 ### Architecture:
 	
-	purbeurre_project/
-		purbeurre_project/
-			.env
-			settings.py
-			urls.py
-		config.py
-		manage.py
-		Procfile
-		geckodriver.exe
-		templates/
-			404.html
-			500.html
-			base.html
-			home.html
-			mentions.html
-		static/
-			main/
-				dist/
-				scripts/
-				src/
-		pages/
-			tests/
-				test_unit.py
-			apps.py
-			urls.py
-			views.py
-		user/
-			static/
-			templates/
-				user/
-					account.html
-					login.html
-					register.html
-			tests/
-				test_unit.py
-			apps.py
-			forms.py
-			urls.py
-			views.py
-		catalogue/
-			management/
-				commands/
-					constants.py
-					database_import_off.py
-			migrations/
-			static/
-			templates/
-				catalogue/
-					details_substitute.html
-					favorites_substitute.html
-					results_substitute.html
-			tests/
-				dataSet_json_cat_prod_mock.json
-				test_database_import_off.py
-				test_functionnal.py
-			apps.py
-			models.py
-			urls.py
-			views.py
+	config.py
+	manage.py
+	Procfile
+	geckodriver.exe
 	requirements.txt
+	purbeurre_project/
+		.env
+		settings.py
+		urls.py
+		wsgi.py
+		asgi.py
+	templates/
+		404.html
+		500.html
+		base.html
+		home.html
+		mentions.html
+	static/
+		main/
+			dist/
+			scripts/
+			src/
+	pages/
+		tests/
+			test_unit.py
+		apps.py
+		urls.py
+		views.py
+	user/
+		static/
+		templates/
+			user/
+				account.html
+				login.html
+				register.html
+		tests/
+			test_unit.py
+		apps.py
+		forms.py
+		urls.py
+		views.py
+	catalogue/
+		management/
+			commands/
+				constants.py
+				database_import_off.py
+		migrations/
+		static/
+		templates/
+			catalogue/
+				details_substitute.html
+				favorites_substitute.html
+				results_substitute.html
+		tests/
+			dataSet_json_cat_prod_mock.json
+			test_database_import_off.py
+			test_functionnal.py
+		apps.py
+		models.py
+		urls.py
+		views.py
 
 ### Getting Started:
 ##### Prerequisites:
@@ -99,7 +100,7 @@ category fields. The available informations of each product like its nutrition-g
 
 	5- Create a PostgreSql database
 
-	6- Create a .env file in root of the repository. Write in it your django secret key and database login:
+	6- Create a .env file in the repository purbeurre-project. Write in it your django secret key and database login:
 	SECRET_KEY=yourkey
 	DATABASE_USER=yourusername
 	DATABASE_PWD=yourpassword
