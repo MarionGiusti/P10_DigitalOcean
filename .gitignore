@@ -3,11 +3,11 @@ env/
 **/.env
 
 # Bootstrap
-/purbeurre_project/static/main/node_modules/
+static/main/node_modules/
 
 # Firefox driver for selenium
-/purbeurre_project/geckodriver.log
-/purbeurre_project/geckodriver.exe
+geckodriver.log
+geckodriver.exe
 
 # test coverage
-/purbeurre_project/.coverage
+.coverage
