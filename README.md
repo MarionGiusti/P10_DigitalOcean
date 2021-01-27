@@ -25,6 +25,7 @@ category fields. The available informations of each product like its nutrition-g
 			urls.py
 		config.py
 		manage.py
+		Procfile
 		geckodriver.exe
 		templates/
 			404.html
@@ -113,4 +114,5 @@ By default, after running the application will be accessible here: 127.0.0.1:800
 
 ###### Online version:
 The application is deployed on Heroku:
+https://healthy-purbeurre.herokuapp.com/
  
