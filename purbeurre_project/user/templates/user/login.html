@@ -57,14 +57,6 @@
 
                 <div class="mt-4">
                     <div class="d-flex justify-content-center">
-                        {% for message in messages %}
-                            <p id="messages">{{message}}</p>
-                        {% endfor %}
-                    </div>
-                </div>    
-
-                <div class="mt-4">
-                    <div class="d-flex justify-content-center">
                         Vous n'avez pas de compte ?<a href="{% url 'user:register' %}" class="ml-2 text-rooibos" > S'inscrire</a>
                     </div>
                 </div>

@@ -1,6 +1,9 @@
+"""
+URL configuration to process register, login, logout and account pages.
+"""
 from django.urls import path
 
-from . import views
+from user import views
 
 urlpatterns = [
     path('register/', views.register_page, name="register"),

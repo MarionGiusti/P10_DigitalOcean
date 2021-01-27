@@ -24,10 +24,10 @@ from user import views
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('catalogue/', include(('catalogue.urls','catalogue'), namespace='catalogue')),
-    path('user/', include(('user.urls', 'user'), namespace='user')),
     path('contentadmin/', admin.site.urls),
+    path('', include('pages.urls')),
+    path('user/', include(('user.urls', 'user'), namespace='user')),
+    path('catalogue/', include(('catalogue.urls','catalogue'), namespace='catalogue')),
 ] + static(settings.STATIC_URL)
 
 if settings.DEBUG:

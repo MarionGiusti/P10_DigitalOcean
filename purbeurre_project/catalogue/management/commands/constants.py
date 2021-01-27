@@ -1,9 +1,6 @@
 """
-
 Constants for the API requests
-
 """
-
 
 CHOSEN_FIELDS = [
     "product_name_fr",
@@ -20,4 +17,3 @@ CHOSEN_FIELDS = [
     "nutriments",
     "categories"
     ]
-

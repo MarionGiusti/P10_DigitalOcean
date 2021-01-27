@@ -1,4 +1,13 @@
 env/
 **/__pycache__
 **/.env
-/purbeurre_project/static/main/node_modules
+
+# Bootstrap
+/purbeurre_project/static/main/node_modules/
+
+# Firefox driver for selenium
+/purbeurre_project/geckodriver.log
+/purbeurre_project/geckodriver.exe
+
+# test coverage
+/purbeurre_project/.coverage
