@@ -1,5 +1,5 @@
 # P8_AppliPurBeurre
-*Create a web platform which suggests healthier alternatives to junk food. [OpenClassrooms Project]*
+* Create a web platform which suggests healthier alternatives to junk food. [OpenClassrooms Project]*
 *****************************************************************************************************************
 ### About The Project:
 In the same spirit that the famous 'Ratatouille' restaurant on the Butte Montmartre, 'Pur Beurre' application promotes healthier eating.
