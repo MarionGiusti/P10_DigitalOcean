@@ -109,7 +109,6 @@ class Command(BaseCommand):
 
                         cat = Category.objects.get(name=category)
                         product.categories.add(cat.id)
-                        product.save()
 
                 except IntegrityError as err:
                     print("Une erreur est intervenue dans l'insertion ou la mise à jour d'un produit: ", err)
