@@ -39,7 +39,7 @@ class SearchSubstituteListView(ListView):
                 (Q(pnns_gps1=prod_to_change.pnns_gps1) | Q(pnns_gps1=prod_to_change.pnns_gps2)) &
                 (Q(pnns_gps2=prod_to_change.pnns_gps1) | Q(pnns_gps2=prod_to_change.pnns_gps2))
                 ) &
-                (Q(nutri_grades__lte=prod_to_change.nutri_grades) &
+                (Q(nutri_grades__lt=prod_to_change.nutri_grades) &
                 (Q(categories__in=prod_to_change_cat))
                 )
             ).order_by('nutri_grades')

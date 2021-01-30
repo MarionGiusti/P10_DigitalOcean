@@ -18,7 +18,7 @@
 {% endblock header %}
 
 {% block content %}
-<section class="page-section ">
+<section class="page-section page-bg ">
     <div class="row justify-content-center ">
         {% if object_list  %}
         <h1>Vous pouvez remplacer cet aliment par:</h1>
@@ -28,7 +28,7 @@
         <div class="row justify-content-center ">
             {% for substitute in object_list %}
                 <div class="col-sm-6 col-lg-4 ">
-                    <div class="card mb-4 justify-content-center align-items-center ">
+                    <div class="card card-shadow mb-4 justify-content-center align-items-center ">
                         <div class="card-body box-product ">
                             <div class="box-img mt-0 text-center">
                                 <img class="img-fluid " src="{{ substitute.picture }}" atl="Picture product"/>
@@ -41,7 +41,7 @@
                             </div>
                             <p class="card-text text-center text-secondary font-weight-bold mt-2">{{ substitute.product_name }}</p>
                         </div>   
-                        <div class= "card-footer bg-secondary ">
+                        <div class= "card-footer box-footer text-center">
                             <form class="" method="POST" action="{% url 'catalogue:save_substitute' %}" accept-charset="utf8">
                                 {% csrf_token %}
                                 <input name="substitute_id" value="{{ substitute.id }}" type="hidden" >
@@ -66,20 +66,20 @@
     </div>
 
 
-    <div class="pagination">
-        <span class="step-links">
+    <div class="pagination justify-content-center">
+        <span class="step-links size-symbol">
             {% if page_obj.has_previous %}
-                <a href="?page=1&query={{query}}">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}&query={{query}}">previous</a>
+                <a href="?page=1&query={{query}}"> &laquo; </a>
+                <a href="?page={{ page_obj.previous_page_number }}&query={{query}}"> &lsaquo; </a>
             {% endif %}
 
             <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
             </span>
 
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}&query={{query}}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}&query={{query}}">last &raquo;</a>
+                <a href="?page={{ page_obj.next_page_number }}&query={{query}}"> &rsaquo; </a>
+                <a href="?page={{ page_obj.paginator.num_pages }}&query={{query}}"> &raquo;</a>
             {% endif %}
         </span>
     </div>
