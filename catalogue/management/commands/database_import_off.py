@@ -66,7 +66,7 @@ class Command(BaseCommand):
             "tag_2": "fr",
             # Sort by popularity
             "sort_by": "unique_scans_n",
-            "page_size": 1,
+            "page_size": 300,
             "json": True
             }
 
@@ -116,6 +116,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """Main method to import the data in the database """
         selected_categories = self.get_biggest_categories()
+        print(selected_categories)
         
         for category in selected_categories:
             try:

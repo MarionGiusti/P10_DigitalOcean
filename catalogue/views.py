@@ -35,14 +35,16 @@ class SearchSubstituteListView(ListView):
             substitute_list = []
             prod_to_change_cat = prod_to_change.categories.all()
             substitute_list = Product.objects.filter(
+                (Q(categories__in=prod_to_change_cat)) &
                 (
                 (Q(pnns_gps1=prod_to_change.pnns_gps1) | Q(pnns_gps1=prod_to_change.pnns_gps2)) &
                 (Q(pnns_gps2=prod_to_change.pnns_gps1) | Q(pnns_gps2=prod_to_change.pnns_gps2))
                 ) &
-                (Q(nutri_grades__lt=prod_to_change.nutri_grades) &
-                (Q(categories__in=prod_to_change_cat))
+                (
+                (Q(nutri_grades__lt=prod_to_change.nutri_grades)) |
+                (Q(nutri_grades__lte=prod_to_change.nutri_grades) & Q(nova_gps__lt=prod_to_change.nova_gps)) 
                 )
-            ).order_by('nutri_grades')
+            ).order_by('product_name')
         else:
             substitute_list = []
 
