@@ -2,6 +2,9 @@ env/
 **/__pycache__
 **/.env
 
+# environment file
+purbeurre_project/settings/production.py
+
 # Bootstrap
 static/main/node_modules/
 
