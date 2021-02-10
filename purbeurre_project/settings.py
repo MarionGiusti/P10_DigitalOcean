@@ -1,3 +1,4 @@
+
 """
 Django settings for purbeurre_project project.
 
@@ -9,14 +10,18 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+from dotenv import load_dotenv, find_dotenv
+from django.core.management.utils import get_random_secret_key
 import os
 from pathlib import Path
 import environ
-import django_heroku
 
-env = environ.Env()
-if os.environ.get('ENV', 'DEVELOPMENT') != 'PRODUCTION':
-    environ.Env.read_env()
+load_dotenv(find_dotenv())
+#env_path = Path('.')/'.env'
+#load_dotenv(dotenv_path=env_path)
+
+#env = environ.Env()
+#environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,16 +31,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV', 'DEVELOPMENT') == 'PRODUCTION':
+if os.getenv('ENV', 'DEVELOPMENT') == 'PRODUCTION':
     DEBUG = False
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.herokuapp.com']
-
+ALLOWED_HOSTS = ['134.122.106.30','127.0.0.1','localhost']
 
 # Application definition
 
@@ -90,12 +94,12 @@ WSGI_APPLICATION = 'purbeurre_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'purbeurre',
-        'USER': env('DATABASE_USER', default=""),
-        'PASSWORD': env('DATABASE_PWD', default=""),
-        'HOST': '',
-        'PORT': '5432',
+        'USER': os.getenv('DATABASE_USER', default=""),
+        'PASSWORD': os.getenv('DATABASE_PWD', default=""),
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -142,6 +146,3 @@ STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
 INTERNAL_IPS = ['127.0.0.1']
 
-# Activate Django-Heroku
-if os.environ.get('ENV', 'DEVELOPMENT') == 'PRODUCTION':
-    django_heroku.settings(locals())
