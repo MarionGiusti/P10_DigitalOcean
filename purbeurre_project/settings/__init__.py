@@ -11,18 +11,24 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from dotenv import load_dotenv, find_dotenv
+<<<<<<< HEAD:purbeurre_project/settings.py
 from django.core.management.utils import get_random_secret_key
+=======
+>>>>>>> cd526d35d1bb080a5e8b8150ebc61fd1a1f6d8be:purbeurre_project/settings/__init__.py
 import os
 from pathlib import Path
 import environ
 
 load_dotenv(find_dotenv())
+<<<<<<< HEAD:purbeurre_project/settings.py
 #env_path = Path('.')/'.env'
 #load_dotenv(dotenv_path=env_path)
 
 #env = environ.Env()
 #environ.Env.read_env()
 
+=======
+>>>>>>> cd526d35d1bb080a5e8b8150ebc61fd1a1f6d8be:purbeurre_project/settings/__init__.py
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,6 +37,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD:purbeurre_project/settings.py
 SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -40,6 +47,15 @@ else:
     DEBUG = True
 
 ALLOWED_HOSTS = ['134.122.106.30','127.0.0.1','localhost']
+=======
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ['134.122.106.30']
+
+>>>>>>> cd526d35d1bb080a5e8b8150ebc61fd1a1f6d8be:purbeurre_project/settings/__init__.py
 
 # Application definition
 
@@ -96,10 +112,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'purbeurre',
+<<<<<<< HEAD:purbeurre_project/settings.py
         'USER': os.getenv('DATABASE_USER', default=""),
         'PASSWORD': os.getenv('DATABASE_PWD', default=""),
         'HOST': 'localhost',
         'PORT': '',
+=======
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PWD'),
+        'HOST': '',
+        'PORT': '5432',
+>>>>>>> cd526d35d1bb080a5e8b8150ebc61fd1a1f6d8be:purbeurre_project/settings/__init__.py
     }
 }
 
@@ -145,4 +168,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
 INTERNAL_IPS = ['127.0.0.1']
+<<<<<<< HEAD:purbeurre_project/settings.py
 
+=======
+>>>>>>> cd526d35d1bb080a5e8b8150ebc61fd1a1f6d8be:purbeurre_project/settings/__init__.py
