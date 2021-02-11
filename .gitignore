@@ -5,9 +5,6 @@ env/
 # staticfiles
 staticfiles/
 
-# environment file
-purbeurre_project/settings/production.py
-
 # Bootstrap
 static/main/node_modules/
 
