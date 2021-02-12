@@ -63,8 +63,9 @@ class ResultsSubstituteSeleniumTests(LiveServerTestCase):
         self.category2.products.add(self.product2)
         self.category3.products.add(self.product1)
         self.category3.products.add(self.product2)
-        self.driver = webdriver.Firefox(executable_path=os.path.join(ROOT_DIR, 'geckodriver.exe'))
-        # Open the navigator with the server adress
+        fireFoxOptions = webdriver.FirefoxOptions()
+        fireFoxOptions.set_headless()
+        self.driver = webdriver.Firefox(executable_path=os.path.join(ROOT_DIR, 'geckodriver.exe'), firefox_options=fireFoxOptions)        # Open the navigator with the server adress
         self.driver.get(self.live_server_url)
 
     def tearDown(self):
