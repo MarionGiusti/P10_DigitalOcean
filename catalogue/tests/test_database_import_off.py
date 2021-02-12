@@ -52,8 +52,8 @@ class ImportAPIDataTests(TestCase):
         # set a `status_code` attribute on the mock object with value 200
         mock_request.return_value.status_code = 200
         # set fake content json
-        with codecs.open(os.path.join(os.path.dirname(__file__)),
-        "\\dataSet_json_cat_prod_mock.json","r", encoding='utf-8') as read_file:
+        with codecs.open(os.path.join(os.path.dirname(__file__),
+        "dataSet_json_cat_prod_mock.json"),"r", encoding='utf-8') as read_file:
             data = json.loads(read_file.read())
         mock_request.return_value.json.return_value = data
 
@@ -63,8 +63,8 @@ class ImportAPIDataTests(TestCase):
 
     def test_insert_product(self):
         Category.objects.create(name="Pâte à tartiner")
-        with codecs.open(os.path.join(os.path.dirname(__file__)),
-        "\\dataSet_json_cat_prod_mock.json","r", encoding='utf-8') as read_file:
+        with codecs.open(os.path.join(os.path.dirname(__file__),
+            "dataSet_json_cat_prod_mock.json"),"r", encoding='utf-8') as read_file:
             data = json.loads(read_file.read())
         products = data["products"]
         command = Command()
