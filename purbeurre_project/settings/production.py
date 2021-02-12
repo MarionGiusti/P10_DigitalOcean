@@ -1,6 +1,9 @@
 from .defaults import *
 
 DEBUG = False
+
+ALLOWED_HOSTS = ['134.122.106.30']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
