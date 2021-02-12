@@ -3,6 +3,7 @@ from .defaults import *
 DEBUG = False
 
 ALLOWED_HOSTS = ['134.122.106.30']
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DATABASES = {
     'default': {
