@@ -1,4 +1,4 @@
-# P8_AppliPurBeurre
+# P10_DigitalOCean _ Deploy appli PurBeurre on a server
 * Create a web platform which suggests healthier alternatives to junk food. [OpenClassrooms Project]*
 *****************************************************************************************************************
 ### About The Project:
