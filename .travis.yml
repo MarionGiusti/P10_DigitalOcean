@@ -9,10 +9,10 @@ addons:
 
 install:
   # installation geckodriver
-  - wget -N https://github.com/mozilla/geckodriver/releases/download/v0.29.0/geckodriver-v0.29.0-linux64.tar.gz -P ~/
+  #- wget -N https://github.com/mozilla/geckodriver/releases/download/v0.29.0/geckodriver-v0.29.0-linux64.tar.gz -P ~/
   # unzip and clean up
-  - tar -xzf ~/geckodriver-v0.29.0-linux64.tar.gz -C ~/
-  - rm ~/geckodriver-v0.29.0-linux64.tar.gz
+  #- tar -xzf ~/geckodriver-v0.29.0-linux64.tar.gz -C ~/
+  #- rm ~/geckodriver-v0.29.0-linux64.tar.gz
   # make driver accessible
   #- sudo mv -f ~/geckodriver /usr/local/share
   #- sudo chmod +x /usr/local/share/geckodriver

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.test import LiveServerTestCase
 from django.urls import reverse
 from selenium import webdriver
+from webdriver_manager.firefox import GeckoDriverManager
 
 from catalogue.models import Product, Category, FavoriteProduct
 from config import ROOT_DIR
@@ -65,7 +66,7 @@ class ResultsSubstituteSeleniumTests(LiveServerTestCase):
         self.category3.products.add(self.product2)
         fireFoxOptions = webdriver.FirefoxOptions()
         fireFoxOptions.set_headless()
-        self.driver = webdriver.Firefox(executable_path=os.path.join(ROOT_DIR, 'geckodriver.exe'), firefox_options=fireFoxOptions)
+        self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), firefox_options=fireFoxOptions)
         # Open the navigator with the server adress
         self.driver.get(self.live_server_url)
 
