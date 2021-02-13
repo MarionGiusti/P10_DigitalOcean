@@ -11,6 +11,7 @@ static/main/node_modules/
 # Firefox driver for selenium
 geckodriver.log
 geckodriver.exe
+geckodriver
 
 # test coverage
 .coverage
