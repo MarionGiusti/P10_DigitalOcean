@@ -2,11 +2,16 @@
 Define routes for the application "User" (login, logout, register, account)
 and responses to HTTP request object
 """
+import logging
+
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from user.forms import CreateUserForm
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 def register_page(request):
     """ Process the user's registration
@@ -22,6 +27,12 @@ def register_page(request):
             messages.success(request, 'Un compte a bien été créé pour ' + user)
 
             return redirect('user:login') # redirect to login page
+
+    logger.info('New user', exc_info=True, extra={
+        # Optionally pass a request and we'll grab any information
+        # we can
+        'request':request,
+        })
 
     context = {'form':form}
     return render(request, 'user/register.html', context)
