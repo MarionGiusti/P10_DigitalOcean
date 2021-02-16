@@ -2,6 +2,9 @@ env/
 **/__pycache__
 **/.env
 
+# newrelic
+newrelic.ini
+
 # staticfiles
 staticfiles/
 
@@ -15,3 +18,4 @@ geckodriver
 
 # test coverage
 .coverage
+

@@ -31,8 +31,8 @@ def register_page(request):
     logger.info('New user', exc_info=True, extra={
         # Optionally pass a request and we'll grab any information
         # we can
-        'request':request,
-        })
+       'request':request,
+    })
 
     context = {'form':form}
     return render(request, 'user/register.html', context)
