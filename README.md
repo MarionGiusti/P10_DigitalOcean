@@ -17,5 +17,5 @@ See the repository P8_PurBeurreApp for more information about the app.
 The app has been deployed on Digital Ocean. Choose an Ubuntu droplet.
 
 ###### Online version:
-[link here!] (134.122.106.30/)
+[link here!](http://134.122.106.30/)
  
