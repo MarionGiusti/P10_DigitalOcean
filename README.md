@@ -1,5 +1,5 @@
-# P10_DigitalOCean _ Deploy the Django app PurBeurre on a server
-* [OpenClassrooms Project]*
+# P10_DigitalOcean 
+* Deploy the Django app PurBeurre on a server [OpenClassrooms Project]*
 *****************************************************************************************************************
 ### About The Project:
 See the repository P8_PurBeurreApp for more information about the app.
