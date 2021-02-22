@@ -4,6 +4,8 @@
 Define routes for the application "Catalogue" (result, detail, save and favorite)
 and responses to HTTP request object
 """
+import logging
+
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib import messages
@@ -14,6 +16,9 @@ from django.db.models import Q
 from django.shortcuts import redirect, get_object_or_404
 
 from .models import Product, FavoriteProduct
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 class SearchSubstituteListView(ListView):
     """Class-based generic ListView.
@@ -65,6 +70,9 @@ class SearchSubstituteListView(ListView):
         context['query'] = query
         if prod_to_change is not None:
             context['product'] = prod_to_change
+        logger.info('Search substitute', exc_info=True, extra={
+            'request': context,
+        })
         return context
 
 

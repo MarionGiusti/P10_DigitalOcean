@@ -1,10 +1,17 @@
 from .defaults import *
+import logging
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
+
+sentry_logging = LoggingIntegration(
+    level=logging.INFO,
+    event_level=logging.DEBUG
+)
 
 sentry_sdk.init(
     dsn="https://fed70ebb04884fd1813c123bcc88f136@o522203.ingest.sentry.io/5633331",
-    integrations=[DjangoIntegration()],
+    integrations=[DjangoIntegration(), sentry_logging],
     traces_sample_rate=1.0,
 
     # If you wish to associate users to errors (assuming you are using
@@ -28,47 +35,34 @@ DATABASES = {
     }
 }
 
-
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
-    'root': {
-        'level': 'INFO', # WARNING by default. Change this to capture more than warnings.
-        'handlers': ['sentry'],
-    },
+    'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s '
-                      '%(process)d %(thread)d %(message)s'
-        },
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        }
+    },
+    'root': {
+        'handlers': ['console', ],
+        'level': 'INFO',
     },
     'handlers': {
-        'sentry': {
-            'level': 'INFO', # To capture more than ERROR, change to WARNING, INFO, etc.
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-            'tags': {'custom-tag': 'x'},
-        },
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         }
     },
     'loggers': {
-        'django.db.backends': {
-            'level': 'ERROR',
-            'handlers': ['console'],
-            'propagate': False,
+        'myprojectcustom': {
+            'level': 'INFO',
+            'handlers': ['console', ],
         },
-        'raven': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        'sentry.errors': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-    },
+        'django.request': {
+            'level' : 'INFO',
+            'handlers': ['console', ],
+            'propagate': False
+        }
+     }
 }

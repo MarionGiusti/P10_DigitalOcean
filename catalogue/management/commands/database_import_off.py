@@ -33,17 +33,17 @@ class Command(BaseCommand):
                         selected_categories.append(cat["name"])
                         db_categories = Category(name=cat["name"])
                         if Category.objects.filter(name=cat.get("name")).exists():
-                            print(f"La catégorie {selected_categories[i]}, existe déjà")
+                            print(f"The selected category: {selected_categories[i]} exists already")
                         else:
                             db_categories.save()
-                            print(f"La catégorie {selected_categories[i]}, a été enregistrée")
+                            print(f"The selected category: {selected_categories[i]} has been registered")
                     except Exception as err:
-                        print(f"La catégorie {selected_categories[i]}, n'a pu être importée. Erreur: {err}")
+                        print(f"The selected category: {selected_categories[i]} could not be imported. Error: {err}")
                 i += 1
             return selected_categories
 
         else:
-            self.stdout.write(self.style.ERROR("Désolé, impossible d'accéder à la liste des catégories de l'API OpenFoodFacts..."))
+            self.stdout.write(self.style.ERROR("Sorry, can't access the category list from the OpenFoodFacts API..."))
 
     def get_product_from_category(self, category):
         """ Method to:
@@ -111,7 +111,7 @@ class Command(BaseCommand):
                         product.categories.add(cat.id)
 
                 except IntegrityError as err:
-                    print("Une erreur est intervenue dans l'insertion ou la mise à jour d'un produit: ", err)
+                    print("An error appears during the insertion or the update of product: ", err)
 
     def handle(self, *args, **options):
         """Main method to import the data in the database """
@@ -122,7 +122,7 @@ class Command(BaseCommand):
             try:
                 products = self.get_product_from_category(category)
                 self.insert_product(products, category)
-                self.stdout.write(self.style.SUCCESS('Importation des données OpenFoodFacts réussie ! '))
+                self.stdout.write(self.style.SUCCESS('Success for the importation of the OpenFoodFacts data ! '))
 
             except Exception as err:
-                raise CommandError("Echec dans l'importation des données de l'OpenFoodFacts: ", err)
+                raise CommandError("Importation of the OpenFoodFacts data failed: ", err)

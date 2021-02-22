@@ -17,7 +17,7 @@ def register_page(request):
     """ Process the user's registration
     Returns:
     redirects to user login page if user created
-    """
+    """ 
     form = CreateUserForm()
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
@@ -26,14 +26,8 @@ def register_page(request):
             user = form.cleaned_data.get('username')
             messages.success(request, 'Un compte a bien été créé pour ' + user)
 
-            return redirect('user:login') # redirect to login page
-
-    logger.info('New user', exc_info=True, extra={
-        # Optionally pass a request and we'll grab any information
-        # we can
-       'request':request,
-    })
-
+            return redirect('user:login')
+    logger.info('New user', exc_info=True)
     context = {'form':form}
     return render(request, 'user/register.html', context)
 
@@ -53,7 +47,7 @@ def login_page(request):
 
         else:
             messages.info(request, "Nom d'utilisateur OU Mot de passe incorrect")
-
+    logger.info('New connexion', exc_info=True)
     context = {}
     return render(request, 'user/login.html', context)
 
