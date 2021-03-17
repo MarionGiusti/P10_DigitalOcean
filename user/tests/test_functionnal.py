@@ -9,7 +9,6 @@ from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 
 from user.models import Profile
-from config import ROOT_DIR
 
 from purbeurre_project.settings.defaults import BASE_DIR
 
