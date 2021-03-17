@@ -1,6 +1,11 @@
 # P10_DigitalOcean 
 *Deploy the Django app PurBeurre on a server [OpenClassrooms Project]*
 *****************************************************************************************************************
+# P11_DigitalOcean
+*Improve an existing project [OpenClassrooms Project]*
+A new functionnality has been added to this project, a user profile
+with a picture and the possibility to update it as well as some others user informations.
+*****************************************************************************************************************
 ### About The Project:
 See the repository P8_PurBeurreApp for more information about the app.
 
