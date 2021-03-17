@@ -9,7 +9,6 @@ from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 
 from catalogue.models import Product, Category, FavoriteProduct
-from config import ROOT_DIR
 
 class ResultsSubstituteSeleniumTests(LiveServerTestCase):
     def setUp(self):
