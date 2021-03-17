@@ -19,8 +19,7 @@ class ProfileSeleniumTests(LiveServerTestCase):
             email = 'auguste.gusteau@bocuse.com',
             password = 'EcSofFRie!',
         )
-        self.profile = Profile.objects.create(user=self.user, profile_pic='auguste.png')
-
+        Profile.objects.filter(user__username='AugusteGusteau').update(profile_pic='auguste.png')
         fireFoxOptions = webdriver.FirefoxOptions()
         fireFoxOptions.set_headless()
         self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), firefox_options=fireFoxOptions)
