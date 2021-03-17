@@ -43,7 +43,7 @@
                             <li class="nav-item d-flex align-items-center"><i class='fas fa-sign-in-alt ml-2' id="icon_nav"></i><a class="nav-link js-scroll-trigger" id="login_link" href="{% url 'user:login' %}"> Se connecter</a></li>
                             
                             {% else %}
-                            <li class="nav-item d-flex align-items-center "><i class='fas fa-user ml-2' id="icon_nav"></i><a class="nav-link js-scroll-trigger" href="{% url 'user:account' %}"> Mon compte</a></li>
+                            <li class="nav-item d-flex align-items-center "><a id="account-link" class="nav-link js-scroll-trigger" href="{% url 'user:account' %}"><img src="{{user.profile.profile_pic.url | default_if_none:'profile.png' }}" alt='icône utilisateur' class="ml-2 mr-2 profile_icon_circle"></img> Mon compte</a></li>
                             <li class="nav-item d-flex align-items-center"><a class="nav-link js-scroll-trigger" href="{% url 'catalogue:favorites_substitute' %}"><img src="{% static 'main/dist/assets/img/carrot-icon.png' %}" alt='icône Carotte' class="ml-2 mr-2"></img> Mes produits</a></li>
                             <li class="nav-item d-flex align-items-center"><i class='fas fa-sign-out-alt ml-2' id="icon_nav"></i><a class="nav-link js-scroll-trigger" href="{% url 'user:logout' %}"> Se déconnecter</a></li>
 

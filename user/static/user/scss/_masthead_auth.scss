@@ -14,3 +14,18 @@ header.masthead_auth {
         font-size: 2.25rem;
     }
 }
+
+//- Profile Picture
+.profile_pic_circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid $rooibos;
+}
+
+.profile_icon_circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+}

@@ -32,7 +32,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('user/', include(('user.urls', 'user'), namespace='user')),
     path('catalogue/', include(('catalogue.urls','catalogue'), namespace='catalogue')),
-] + static(settings.STATIC_URL)
+] + static(settings.STATIC_URL) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar

@@ -10173,6 +10173,20 @@ header.masthead_auth h1 {
   font-size: 2.25rem;
 }
 
+.profile_pic_circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #c45525;
+}
+
+.profile_icon_circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+}
+
 header.masthead_food {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);

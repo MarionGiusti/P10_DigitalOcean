@@ -113,6 +113,10 @@ class RegisterTests(TestCase):
 
 
 class AccountTests(TestCase):
+    def setUp(self):
+        user = User.objects.create_user('AugusteGusteau', 'auguste.gusteau@bocuse.com', 'EcSofFRie!')
+        self.client.login(username='AugusteGusteau', password='EcSofFRie!')
+        
     def test_account_page_status_code(self):
         response = self.client.get('/user/account/')
         self.assertEqual(response.status_code, 200)
